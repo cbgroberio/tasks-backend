@@ -66,7 +66,7 @@
 			<plugin>
                 <groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>6.0.2</version>
+                <version>6.2.2</version>
                 <executions>
                     <execution>
                         <goals>
@@ -75,8 +75,8 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <!-- Generate all report formats -->
-                    <format>ALL</format>
+                    <!-- Format Report (JSON / HTML / XML / ALL) -->
+                    <format>JSON</format>
                 </configuration>
             </plugin>
 			<plugin>
