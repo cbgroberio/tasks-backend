@@ -37,7 +37,6 @@
 			<artifactId>spring-boot-starter-tomcat</artifactId>
 			<scope>provided</scope>
 		</dependency>
-
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -62,9 +61,14 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+			</plugin>			
 			<plugin>
-                <groupId>org.owasp</groupId>
+			   	<groupId>org.sonarsource.scanner.maven</groupId>
+			   	<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.8.0.2131</version>
+			</plugin>			
+			<plugin>
+            	<groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
                 <version>6.2.2</version>
                 <executions>
@@ -76,7 +80,10 @@
                 </executions>
                 <configuration>
                     <!-- Format Report (JSON / HTML / XML / ALL) -->
-                    <format>JSON</format>
+					<formats>
+						<format>html</format>
+						<format>json</format>
+      				</formats>
                 </configuration>
             </plugin>
 			<plugin>
@@ -91,7 +98,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<destFile>${sonar.jacoco.reportPath}</destFile>
+					<destFile>${sonar.coverage.jacoco.xmlReportPaths}</destFile>
 				</configuration>
 			</plugin>
 		</plugins>
