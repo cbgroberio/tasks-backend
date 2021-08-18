@@ -65,22 +65,7 @@
 			<plugin>
             	<groupId>org.owasp</groupId>
                 <artifactId>dependency-check-maven</artifactId>
-                <version>6.2.2</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <!-- Format Report (JSON / HTML / XML / ALL) -->
-					<formats>
-						<format>html</format>
-						<format>json</format>
-						<format>xml</format>
-      				</formats>
-                </configuration>
+                <version>5.3.2</version>
             </plugin>
 			<plugin>
 				<groupId>org.jacoco</groupId>
